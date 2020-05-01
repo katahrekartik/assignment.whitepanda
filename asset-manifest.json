@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/katahrekartik/assignment.whitepanda/static/css/main.d1b05096.chunk.css",
-    "main.js": "/katahrekartik/assignment.whitepanda/static/js/main.63e4f5cf.chunk.js",
-    "main.js.map": "/katahrekartik/assignment.whitepanda/static/js/main.63e4f5cf.chunk.js.map",
-    "runtime-main.js": "/katahrekartik/assignment.whitepanda/static/js/runtime-main.fb8c7fe6.js",
-    "runtime-main.js.map": "/katahrekartik/assignment.whitepanda/static/js/runtime-main.fb8c7fe6.js.map",
-    "static/js/2.5322130a.chunk.js": "/katahrekartik/assignment.whitepanda/static/js/2.5322130a.chunk.js",
-    "static/js/2.5322130a.chunk.js.map": "/katahrekartik/assignment.whitepanda/static/js/2.5322130a.chunk.js.map",
-    "index.html": "/katahrekartik/assignment.whitepanda/index.html",
-    "precache-manifest.1fa17720b8ec93ad684cbe7b94a210cb.js": "/katahrekartik/assignment.whitepanda/precache-manifest.1fa17720b8ec93ad684cbe7b94a210cb.js",
-    "service-worker.js": "/katahrekartik/assignment.whitepanda/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/katahrekartik/assignment.whitepanda/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.5322130a.chunk.js.LICENSE.txt": "/katahrekartik/assignment.whitepanda/static/js/2.5322130a.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/katahrekartik/assignment.whitepanda/static/media/logo.5d5d9eef.svg"
+    "main.css": "/assignment.whitepanda/static/css/main.d1b05096.chunk.css",
+    "main.js": "/assignment.whitepanda/static/js/main.a184ae42.chunk.js",
+    "main.js.map": "/assignment.whitepanda/static/js/main.a184ae42.chunk.js.map",
+    "runtime-main.js": "/assignment.whitepanda/static/js/runtime-main.eac468a7.js",
+    "runtime-main.js.map": "/assignment.whitepanda/static/js/runtime-main.eac468a7.js.map",
+    "static/js/2.5322130a.chunk.js": "/assignment.whitepanda/static/js/2.5322130a.chunk.js",
+    "static/js/2.5322130a.chunk.js.map": "/assignment.whitepanda/static/js/2.5322130a.chunk.js.map",
+    "index.html": "/assignment.whitepanda/index.html",
+    "precache-manifest.e8d273f78ec99e8413a8e3513a93121b.js": "/assignment.whitepanda/precache-manifest.e8d273f78ec99e8413a8e3513a93121b.js",
+    "service-worker.js": "/assignment.whitepanda/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/assignment.whitepanda/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.5322130a.chunk.js.LICENSE.txt": "/assignment.whitepanda/static/js/2.5322130a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/assignment.whitepanda/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb8c7fe6.js",
+    "static/js/runtime-main.eac468a7.js",
     "static/js/2.5322130a.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.63e4f5cf.chunk.js"
+    "static/js/main.a184ae42.chunk.js"
   ]
 }
