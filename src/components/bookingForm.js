@@ -47,9 +47,9 @@ class BookingForm extends Component{
             contactError.push('Number Length should be 10') 
         }
         //regex for name
-        var regName = /^[a-zA-Z]+[a-zA-Z]+$/;
+        var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
         if(!regName.test(this.state.name.trim())){
-            nameError = "Should not contain number"
+            nameError = "Should be a full name Ex: John Doe"
         }
         //if error than return false else retrur true
         if(nameError||contactError.length>0){
