@@ -27,6 +27,9 @@ function RenderCarList({car,index}){
                             <Link to={`/bookings/${car.id}/${index}`} ><Button disabled={!car.availability} style={{margin:"10%"}}>Book now</Button></Link>
                             {/* This will pass the car id and index in the url  */}
                             <Link to={`/cars/${car.id}/${index}`} ><Button outline color="secondary">Details</Button></Link>
+                            {car.availability?<p></p>:<p className="unavailableHomepage">Currently unavailable!</p>}
+
+
                         </Col>
                     </Row>
                 </CardBody>

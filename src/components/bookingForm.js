@@ -20,7 +20,10 @@ class BookingForm extends Component{
             name: '',
             contact: '',
             issueDate: '',
-            returnDate: ''
+            returnDate: '',
+            //states for errror
+            nameError : '',
+            contactError : []
              
         }
         //bind this keyword with all the functions
@@ -30,14 +33,53 @@ class BookingForm extends Component{
         // console.log(this.state);
     }
 
+    validate = () =>{
+        let contactError = [];
+        let nameError = '';
+        //Regex for contact number
+        var regContact = /^\d+$/;
+        if(!regContact.test(this.state.contact)){
+            contactError.push("Alphabates are not allowed");
+        }
+        //if mobile length is not 10
+        if(this.state.contact.length!==10){
+            // alert(this.state.contact.length);
+            contactError.push('Number Length should be 10') 
+        }
+        //regex for name
+        var regName = /^[a-zA-Z]+[a-zA-Z]+$/;
+        if(!regName.test(this.state.name.trim())){
+            nameError = "Should not contain number"
+        }
+        //if error than return false else retrur true
+        if(nameError||contactError.length>0){
+            this.setState({
+                nameError : nameError,
+                contactError: contactError
+            });
+
+            return false;
+        }
+
+        return true;
+
+    }
+
     //Function invokes when submit is clicked
     handleSubmit(event) {
-        //This will add a booking object in Bookings  
-        this.props.addbooking(this.props.car.id, this.state.name, this.state.contact, this.state.issueDate, this.state.returnDate);
-        //change availablity of the car to false
-        this.props.changeavailability(this.props.index);
-        //Prevent page from refreshing
         event.preventDefault(); 
+        const isValid = this.validate();
+        //check if the form if validared
+        if(isValid){
+            //This will add a booking object in Bookings  
+            this.props.addbooking(this.props.car.id, this.state.name, this.state.contact, this.state.issueDate, this.state.returnDate);
+            //change availablity of the car to false
+            this.props.changeavailability(this.props.index);
+            //Prevent page from refreshing
+        }else{
+            alert('Invalid form values');
+        }
+        
     }
 
     //set state of name and contact number
@@ -75,10 +117,11 @@ class BookingForm extends Component{
                         <FormGroup >
                         <Label htmlFor="name">Name</Label>
                             <Input type="text" id="name" className="inputfield" name="name"
-                                placeholder="Name"
+                                placeholder="John Doe"
                                 required
                                 value={this.state.firstname}
                                 onChange={this.handleInputChange} />
+                            <p className="unavailable">{this.state.nameError}</p>
                             </FormGroup>
                         </Col>
                         <Col md={5}>
@@ -90,6 +133,8 @@ class BookingForm extends Component{
                                 required
                                 value={this.state.telnum}
                                 onChange={this.handleInputChange} />
+                            {this.state.contactError.map(value=>{return <p className="unavailable">{value}</p>}    ) }
+                            
                     </FormGroup>
                         </Col>
                     </Row>
