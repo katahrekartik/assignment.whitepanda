@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/assignment.whitepanda/precache-manifest.5c13eab8b046b6f3fd11ccb302f3ef5b.js"
+  "/assignment.whitepanda/precache-manifest.4d9e98fb8b898d38a4f310310c1df9fc.js"
 );
 
 self.addEventListener('message', (event) => {

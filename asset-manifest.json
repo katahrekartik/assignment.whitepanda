@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/assignment.whitepanda/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/assignment.whitepanda/static/js/main.04c2692e.chunk.js",
-    "main.js.map": "/assignment.whitepanda/static/js/main.04c2692e.chunk.js.map",
+    "main.css": "/assignment.whitepanda/static/css/main.bd73901d.chunk.css",
+    "main.js": "/assignment.whitepanda/static/js/main.c9ed54b8.chunk.js",
+    "main.js.map": "/assignment.whitepanda/static/js/main.c9ed54b8.chunk.js.map",
     "runtime-main.js": "/assignment.whitepanda/static/js/runtime-main.eac468a7.js",
     "runtime-main.js.map": "/assignment.whitepanda/static/js/runtime-main.eac468a7.js.map",
-    "static/css/2.22628119.chunk.css": "/assignment.whitepanda/static/css/2.22628119.chunk.css",
-    "static/js/2.1f58a91b.chunk.js": "/assignment.whitepanda/static/js/2.1f58a91b.chunk.js",
-    "static/js/2.1f58a91b.chunk.js.map": "/assignment.whitepanda/static/js/2.1f58a91b.chunk.js.map",
+    "static/css/2.9d08b08d.chunk.css": "/assignment.whitepanda/static/css/2.9d08b08d.chunk.css",
+    "static/js/2.8fafd0e5.chunk.js": "/assignment.whitepanda/static/js/2.8fafd0e5.chunk.js",
+    "static/js/2.8fafd0e5.chunk.js.map": "/assignment.whitepanda/static/js/2.8fafd0e5.chunk.js.map",
     "index.html": "/assignment.whitepanda/index.html",
-    "precache-manifest.5c13eab8b046b6f3fd11ccb302f3ef5b.js": "/assignment.whitepanda/precache-manifest.5c13eab8b046b6f3fd11ccb302f3ef5b.js",
+    "precache-manifest.4d9e98fb8b898d38a4f310310c1df9fc.js": "/assignment.whitepanda/precache-manifest.4d9e98fb8b898d38a4f310310c1df9fc.js",
     "service-worker.js": "/assignment.whitepanda/service-worker.js",
-    "static/css/2.22628119.chunk.css.map": "/assignment.whitepanda/static/css/2.22628119.chunk.css.map",
-    "static/css/main.5ecd60fb.chunk.css.map": "/assignment.whitepanda/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.1f58a91b.chunk.js.LICENSE.txt": "/assignment.whitepanda/static/js/2.1f58a91b.chunk.js.LICENSE.txt",
-    "static/media/font-awesome.min.css": "/assignment.whitepanda/static/media/fontawesome-webfont.fee66e71.woff",
-    "static/media/ford.png": "/assignment.whitepanda/static/media/ford.f4822d2a.png"
+    "static/css/2.9d08b08d.chunk.css.map": "/assignment.whitepanda/static/css/2.9d08b08d.chunk.css.map",
+    "static/css/main.bd73901d.chunk.css.map": "/assignment.whitepanda/static/css/main.bd73901d.chunk.css.map",
+    "static/js/2.8fafd0e5.chunk.js.LICENSE.txt": "/assignment.whitepanda/static/js/2.8fafd0e5.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/assignment.whitepanda/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.eac468a7.js",
-    "static/css/2.22628119.chunk.css",
-    "static/js/2.1f58a91b.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.04c2692e.chunk.js"
+    "static/css/2.9d08b08d.chunk.css",
+    "static/js/2.8fafd0e5.chunk.js",
+    "static/css/main.bd73901d.chunk.css",
+    "static/js/main.c9ed54b8.chunk.js"
   ]
 }
