@@ -1,3 +1,5 @@
+//container the car objects
+
 export const CARS = [
 
     {

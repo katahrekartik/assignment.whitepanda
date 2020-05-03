@@ -1,7 +1,11 @@
 import React,{Component} from 'react';
-import {Button,Modal, ModalHeader, ModalBody,Form, FormGroup, Input, Label,Row,Col,Breadcrumb,BreadcrumbItem } from 'reactstrap';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Breadcrumb, BreadcrumbItem,
+    Button, Form, FormGroup, Label, Input, Col, Row} from 'reactstrap';
 import { Link } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { addDays } from 'date-fns';
+import { withRouter } from 'react-router-dom';
 
 
 class BookingForm extends Component{
@@ -10,81 +14,169 @@ class BookingForm extends Component{
         super(props);
 
         this.state = {
-            isModalOpen:false
+            // use to disable the return date input
+            isDisable:true,
+            //Other states will be used in form
+            name: '',
+            contact: '',
+            issueDate: '',
+            returnDate: ''
+             
         }
-
-        this.toggleModal = this.toggleModal.bind(this);
+        //bind this keyword with all the functions
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.checkIsBooked = this.checkIsBooked.bind(this);
+        // console.log(this.state);
     }
 
-    toggleModal(){
-        this.setState({
-            isModalOpen : !this.state.isModalOpen
-        })
-    }
-
-
-    handleSubmit(values){
-        // console.log(values);
-        console.log(this.props);
-        this.props.addbooking(this.props.car.id, values.name, values.contact, values.issueDate, values.returnDate);
+    //Function invokes when submit is clicked
+    handleSubmit(event) {
+        //This will add a booking object in Bookings  
+        this.props.addbooking(this.props.car.id, this.state.name, this.state.contact, this.state.issueDate, this.state.returnDate);
+        //change availablity of the car to false
         this.props.changeavailability(this.props.index);
+        //Prevent page from refreshing
+        event.preventDefault(); 
     }
 
+    //set state of name and contact number
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+          [name]: value
+        });
+    }
+    //set state of issue date and set state of disable to false so that return date input works  
+    handleIssueDate = date => {
+        this.setState({
+          issueDate: date,
+          isDisable:false
+        });
+    };
 
+    //set state of return date
+    handleReturnDate = date => {
+        this.setState({
+        returnDate: date
+        });
+    };
+
+    // Function returns the booking form
+    BookingForm(){
+        return(
+            <div className="row row-content">
+            <div className="col-12">
+                <Form onSubmit={this.handleSubmit}>
+                    <Row className="formrow">
+                        <Col md={5}>
+                        <FormGroup >
+                        <Label htmlFor="name">Name</Label>
+                            <Input type="text" id="name" className="inputfield" name="name"
+                                placeholder="Name"
+                                required
+                                value={this.state.firstname}
+                                onChange={this.handleInputChange} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={5}>
+                        <FormGroup >
+                    <Label htmlFor="contact">Contact Tel.</Label>
+        
+                            <Input type="text" id="contact" className="inputfield" name="contact"
+                                placeholder="+91"
+                                required
+                                value={this.state.telnum}
+                                onChange={this.handleInputChange} />
+                    </FormGroup>
+                        </Col>
+                    </Row>
+                    
+                    <Row >
+                        <Col md={5}>
+                    <FormGroup>
+                        <Label htmlFor="issueDate">Issue Date</Label><br/>
+                    
+                            <DatePicker
+                            className="form-control inputfield"
+                                selected={this.state.issueDate}
+                                required
+                                placeholderText="MM/DD/YYYY"
+                                onChange={this.handleIssueDate}
+                                minDate={new Date()}
+                            />
+        
+                    </FormGroup>
+                    </Col>
+                    <Col md={5}>
+                    <FormGroup>
+                        <Label htmlFor="returndate" >Return Date</Label><br/>
+                            <DatePicker
+                                className="form-control inputfield"
+                                selected={this.state.returnDate}
+                                placeholderText="MM/DD/YYYY"
+                                required
+                                minDate={addDays(this.state.issueDate,1)}
+                                onChange={this.handleReturnDate}
+                                disabled={this.state.isDisable}
+                            />
+                
+                    </FormGroup>
+                    </Col>
+                    </Row>
+                    <Row>
+                    <Col md={10}>
+                    <FormGroup >
+                              <Button type="submit" color="secondary" className="submitbutton"  onClick={()=>this.setState({isbooked:true})}>
+                                Book Car
+                            </Button>
+                      </FormGroup>
+                      </Col>
+                      </Row>
+                </Form>
+                <Button outline color="secondary" className="backbutton"  onClick={this.props.history.goBack}>Back</Button>
+            </div>
+       </div>
+        );
+    }
+
+//Function returns Form if the car is not booked
+    checkIsBooked(){
+        //return form if there are no bookings
+        if(this.props.bookings.length==0){
+            return this.BookingForm();
+        //check if the car is already booked
+        }else if(this.props.bookings[this.props.bookings.length-1].carId == parseInt(this.props.match.params.carId)){
+                return (
+                    <div className="container">
+                    <div className="alert alert-success">
+                    <strong>Your Booking has been Confirmed!</strong>
+                  </div>
+                  <Link to="/cars"><Button outline color="secondary">Continue</Button></Link>
+                  </div>
+                );
+            }
+            else{
+                return this.BookingForm(); 
+            }
+    }
+ 
     render(){
-        const required = (val) => val && val.length;
-    const maxLength = (len) => (val) => !(val) || (val.length <= len);
-    const minLength = (len) => (val) => val && (val.length >= len);
-    const isNumber = (val) => !isNaN(Number(val));
-    const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
         return(
             <div className="container">
+                {/* use to jump between pages */}
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/">Cars</Link></BreadcrumbItem>
-                    <BreadcrumbItem active></BreadcrumbItem>
+                    <BreadcrumbItem active>Booking details</BreadcrumbItem>
                 </Breadcrumb>
-                <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
-                <Row className="form-group">
-                    <Label htmlFor="name" md={12}>Your Name</Label>
-                    <Col md={12}>
-                        <Control.text model=".name" id="name" name="name"
-                        placeholder="John Doe"
-                        className="form-control"
-                        validators={{
-                        required, minLength: minLength(3), maxLength: maxLength(15)
-                        }}
-                        />
-                        <Errors
-                        className="text-danger"
-                        model=".name"
-                        show="touched"
-                        messages={{
-                        required: 'Required',
-                        minLength: 'Must be greater than 2 characters',
-                        maxLength: 'Must be 15 characters or less'
-                        }}
-                        />
-                    </Col>
-                </Row>
-                <Row className="form-group">
-                    <Col md={12}>
-                        <Button type="submit" color="primary">
-                        Book Car
-                        </Button>
-                    </Col>
-                </Row>
-                </LocalForm>
-
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
-                    <ModalBody>
-                        
-                    </ModalBody>
-                </Modal>
+                {/* //Function returns Form if the car is not booked */}
+                {this.checkIsBooked()}
             </div>
-                
         );
     }
 }
 
-export default BookingForm;
+//Enclose bookingform component inside withrouter 
+export default withRouter(BookingForm);

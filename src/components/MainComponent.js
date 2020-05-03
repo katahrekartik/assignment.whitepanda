@@ -19,24 +19,23 @@ const mapStateToProps = state => {
   }
 //   This will map the dispatch with props
   const mapDispatchToProps = dispatch => ({
+    //function for add booking
     addbooking: (carId, name, contactNo, issueDate, returnDate) => dispatch(addbooking(carId, name, contactNo, issueDate,returnDate)),
+    //use to change the availability of the vehicle if the car is booked
     changeavailability: (index) => dispatch(changeavailability(index))
   });
 
 class Main extends Component{
-  
     constructor(props){
         super(props);
-       
     }
-
-
     render(){
-
         const CarWithId = ({match}) => {
             return(
+                //Pass the car object using filter function
                 <CarDetail car={this.props.cars.filter((car) => car.id === parseInt(match.params.carId,10))[0]}
                 bookings={this.props.bookings.filter((booking) => booking.carId === parseInt(match.params.carId,10))}
+                // index will be used to update the state of the seleted item                
                 index = {match.params.index}
                 /> 
             );
@@ -44,11 +43,14 @@ class Main extends Component{
 
         const BookWithId = ({match}) => {
             return(
+                //Pass the car object using filter function
                 <BookingForm car={this.props.cars.filter((car) => car.id === parseInt(match.params.carId,10))[0]}
-                // bookings={this.props.bookings.filter((booking) => booking.carId === parseInt(match.params.carId,10))}
                 addbooking={this.props.addbooking}
                 changeavailability = {this.props.changeavailability}
+                // index will be used to update the state of the seleted item
                 index = {match.params.index}
+                //this will be used to check  if the car is already booked
+                bookings={this.props.bookings}
               /> 
             );
         }
@@ -58,7 +60,9 @@ class Main extends Component{
             <Header/>
             <Switch>   
                 <Route exact path='/cars' component={()=> <Cars cars={this.props.cars} />}  />
+                {/* Index will be use to update the state of the selected item */}
                 <Route path='/cars/:carId/:index' component={CarWithId} />
+                {/* Index will be use to update the state of the selected item */}
                 <Route path='/bookings/:carId/:index' component={BookWithId} />
                 {/* Default router when no routes found */}
                 <Redirect to='/cars' />

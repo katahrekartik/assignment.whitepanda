@@ -12,11 +12,11 @@ class Header extends Component {
     render() {
         return(
             <div>
-                <Jumbotron>
+                <Jumbotron fluid className="header">
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>RENTVROOM</h1>
+                                <h1 className="mainheading">RentVroom</h1>
                             </div>
                         </div>
                     </div>
