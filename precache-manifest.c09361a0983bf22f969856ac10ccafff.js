@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a963260809964c2800f37bbd9d9a347c",
+    "revision": "799197350a672ba0f4c68b306b9beee5",
     "url": "/assignment.whitepanda/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assignment.whitepanda/static/css/2.9d08b08d.chunk.css"
   },
   {
-    "revision": "aa276b85110fb0a4873f",
-    "url": "/assignment.whitepanda/static/css/main.bd73901d.chunk.css"
+    "revision": "91f9c1bb25678ac258c3",
+    "url": "/assignment.whitepanda/static/css/main.07da2970.chunk.css"
   },
   {
     "revision": "441383346bf94ac0085c",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assignment.whitepanda/static/js/2.8fafd0e5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aa276b85110fb0a4873f",
-    "url": "/assignment.whitepanda/static/js/main.c9ed54b8.chunk.js"
+    "revision": "91f9c1bb25678ac258c3",
+    "url": "/assignment.whitepanda/static/js/main.4a547949.chunk.js"
   },
   {
     "revision": "9d8bbedbca47a973b327",
