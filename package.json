@@ -1,6 +1,6 @@
 {
-    "name": "assignment.whitepanda",
-    "homepage": "https://katahrekartik.github.io/assignment.whitepanda",
+    "name": "carrentals",
+    "homepage": "https://katahrekartik.github.io/carrentals",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

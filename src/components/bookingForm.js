@@ -210,7 +210,7 @@ class BookingForm extends Component{
  
     render(){
         return(
-            <div className="container">
+            <div className="container maincontainer">
                 {/* use to jump between pages */}
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/">Cars</Link></BreadcrumbItem>

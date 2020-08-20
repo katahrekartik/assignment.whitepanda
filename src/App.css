@@ -1,132 +1,139 @@
- .mainheading {
-     font-family: Arial, Helvetica, sans-serif;
- }
- 
- .carmodal {
-     font-weight: bold;
-     font-size: 20px;
- }
- 
- .cards {
-     margin-top: 20px;
- }
- 
- .rentperday {
-     float: right;
- }
- 
- .seatingcapacity {
-     margin-left: 20px;
- }
- 
- .carlistcards {
-     height: 120px;
- }
- 
- .cardimg {
-     height: 120px;
- }
- 
- .fullcardetails {
-     margin-top: 50px;
-     overflow: hidden;
-     color: gray;
- }
- 
- .cardetails {
-     color: gray;
- }
- 
- .bookbuttoncardetails {
-     margin-top: 40px;
- }
- 
- .cardetailscard {
-     height: 280px;
- }
- 
- .inputfield {
-     border: none;
-     border-bottom: 1px solid gray;
- }
- 
- .customModal {
-     position: absolute;
-     height: 200px;
-     width: 200px;
- }
- 
- .cardetailsimg {
-     height: 280px;
- }
- 
- hr {
-     border: 1px solid rgb(221, 215, 215);
-     border-radius: 5px;
- }
- 
- .unavailable {
-     color: red;
- }
- 
- .unavailableHomepage {
-     margin-top: -20px;
-     color: red;
-     margin-left: 20px;
- }
- 
- table tr th {
-     color: gray;
- }
- 
- .header {
-     color: gray;
- }
- 
- .heading {
-     font-size: 25px;
-     color: gray;
- }
- 
- .submitbutton {
-     float: right;
-     margin-top: 50px;
- }
- 
- .backbutton {
-     float: left;
-     margin-top: -20px;
- }
- 
- .formrow {
-     margin-top: 50px;
- }
- 
- @media screen and (max-width:480px) {
-     .cardimg {
-         height: 100%;
-     }
-     .carlistcards {
-         height: 100%;
-     }
-     .cardetailscard {
-         height: 100%;
-     }
-     .cardetailsimg {
-         height: 100%;
-     }
-     .submitbutton {
-         margin-right: 50px;
-         margin-top: 50px;
-         float: left;
-     }
-     .backbutton {
-         margin-top: 10px;
-     }
-     .cardetails {
-         margin-top: 10px;
-     }
-     .bookbuttoncardetails {
-         margin-top: 10px;
-     }
- }
+.maincontainer {
+    background: url('https://lh3.googleusercontent.com/proxy/cEk0F1lQBu9Vr-dVGzi4dCY_RMmguzeWIMEriqc3EWBXNJLnKFkQuQqilffs7259DR9kWbPVZr0Kfq2E3RNM6F9jh3a4M96Q7TAkM_1UlUoJlg7LC4tGUrM');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainheading {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.carmodal {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cards {
+    margin-top: 20px;
+}
+
+.rentperday {
+    float: right;
+}
+
+.seatingcapacity {
+    margin-left: 20px;
+}
+
+.carlistcards {
+    height: 120px;
+}
+
+.cardimg {
+    height: 120px;
+}
+
+.fullcardetails {
+    margin-top: 50px;
+    overflow: hidden;
+    color: gray;
+}
+
+.cardetails {
+    color: gray;
+}
+
+.bookbuttoncardetails {
+    margin-top: 40px;
+}
+
+.cardetailscard {
+    height: 280px;
+}
+
+.inputfield {
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.customModal {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+}
+
+.cardetailsimg {
+    height: 280px;
+}
+
+hr {
+    border: 1px solid rgb(221, 215, 215);
+    border-radius: 5px;
+}
+
+.unavailable {
+    color: red;
+}
+
+.unavailableHomepage {
+    margin-top: -20px;
+    color: red;
+    margin-left: 20px;
+}
+
+table tr th {
+    color: gray;
+}
+
+.header {
+    color: gray;
+}
+
+.heading {
+    font-size: 25px;
+    color: gray;
+}
+
+.submitbutton {
+    float: right;
+    margin-top: 50px;
+}
+
+.backbutton {
+    float: left;
+    margin-top: -20px;
+}
+
+.formrow {
+    margin-top: 50px;
+}
+
+@media screen and (max-width:480px) {
+    .cardimg {
+        height: 100%;
+    }
+    .carlistcards {
+        height: 100%;
+    }
+    .cardetailscard {
+        height: 100%;
+    }
+    .cardetailsimg {
+        height: 100%;
+    }
+    .submitbutton {
+        margin-right: 50px;
+        margin-top: 50px;
+        float: left;
+    }
+    .backbutton {
+        margin-top: 10px;
+    }
+    .cardetails {
+        margin-top: 10px;
+    }
+    .bookbuttoncardetails {
+        margin-top: 10px;
+    }
+}
